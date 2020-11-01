@@ -1,0 +1,57 @@
+.btn-global {
+  background-color: #efefef;
+  color: #333333;
+  border: 1px solid #000000;
+  font-family: inherit;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:focus {
+    text-decoration: none;
+    position: relative;
+    // change for the <button> element
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin: 1.2rem 0 1.2rem 0;
+    }
+  }
+
+  &--small {
+    font-size: 1.6rem;
+  }
+
+  &--medium {
+    font-size: 2rem;
+  }
+
+  &--large {
+    font-size: 2.6rem;
+  }
+
+  &--addPlayer {
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin: 0;
+    }
+  }
+}

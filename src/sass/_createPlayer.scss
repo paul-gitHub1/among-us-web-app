@@ -1,0 +1,76 @@
+.createPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 0 5rem 0;
+  margin-top: 5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    margin-top: 0;
+  }
+
+  &__inputForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+    }
+  }
+
+  &__colorDropdown {
+    width: 100%;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    border: 1px solid #333333;
+  }
+
+  &__secondaryButtons {
+    @media only screen and (max-width: $bp-smallest) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+form {
+  display: flex;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+input {
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 4px;
+  border: 1px solid #333333;
+  outline: none;
+  display: block;
+  margin-right: 1rem;
+}
+
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}

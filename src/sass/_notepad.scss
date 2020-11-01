@@ -1,0 +1,27 @@
+.notePad {
+  display: grid;
+  padding: 0 10rem 6rem 10rem;
+  width: 100%;
+  grid-column-gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    width: 30rem;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 0 6.5rem 6rem 6.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    grid-column-gap: 0.5rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 0 6.5rem 6rem 6.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-column-gap: 0.5rem;
+  }
+}
