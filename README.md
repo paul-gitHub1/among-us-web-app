@@ -2,7 +2,7 @@
 
 ## version 3.0
 
-Helps player track the...
+Helps player track
 
 - Crew
 - Suspects
