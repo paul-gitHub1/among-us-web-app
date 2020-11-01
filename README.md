@@ -2,10 +2,7 @@
 
 ## version 3.0
 
-Helps player track
-
-TEST
-TEST.
+Helps player track:
 
 - Crew
 - Suspects
