@@ -330,7 +330,9 @@ function App() {
   return (
     <div>
       <div className="side-element side-element--top side-element--horizontal side-element--1">
-        <h1 className="side-element-heading">Among us notepad 3.0</h1>
+        <h1 className="side-element-heading">
+          Among us notepad 3.0 | The Skeld | Mire HQ | Polus
+        </h1>
       </div>
       <div className="side-element side-element--right side-element--vertical side-element--2"></div>
       <div className="side-element side-element--bottom side-element--horizontal side-element--3">
