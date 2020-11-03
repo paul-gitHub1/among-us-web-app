@@ -3,9 +3,21 @@
   border: none;
   color: #ffffff;
   text-decoration: underline;
+  height: fit-content;
 
   &:not(:last-child) {
     padding-right: 2rem;
+  }
+
+  &:focus {
+    position: relative;
+    // change for the <button> element
+    outline: none;
+  }
+
+  &:hover {
+    color: red;
+    cursor: pointer;
   }
 
   &--hidden {

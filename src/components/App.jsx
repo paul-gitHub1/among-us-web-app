@@ -74,6 +74,7 @@ function App() {
   // Add player.
   function addPlayer(player) {
     if (player.playerColor !== "" && player.playerName !== "") {
+      console.log(player);
       setCrew((prevPlayers) => {
         return [...prevPlayers, player];
       });
@@ -328,22 +329,40 @@ function App() {
     });
   }
 
-  function displayImage() {
-    console.log("Clicked");
+  function showDisplay(e) {
+    const src = e.currentTarget.querySelector("img").src;
+    const overlay = document.querySelector(".overlay");
+    const overlayImage = overlay.querySelector(".overlay--image");
+    overlayImage.src = src;
+    overlay.classList.add("open");
+    console.log(src);
+  }
+
+  function close() {
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.remove("open");
   }
 
   return (
     <div>
       <div className="side-element side-element--top side-element--horizontal side-element--1">
         <h1 className="side-element-heading">Among us notepad 3.0 </h1>
-        <ImageOverlay />
+        <ImageOverlay handleClose={close} />
         <ImageButton
           mapName={"Mira"}
-          mapImage={"img/mira.png"}
-          display={displayImage}
+          mapImage={"https://amongusnotepad.com/img/mira.png"}
+          handleDisplay={showDisplay}
         />
-        <ImageButton mapName={"Polus"} mapImage={"img/polus.png"} />
-        <ImageButton mapName={"Skeld"} mapImage={"img/skeld.png"} />
+        <ImageButton
+          mapName={"Polus"}
+          mapImage={"https://amongusnotepad.com/img/polus.png"}
+          handleDisplay={showDisplay}
+        />
+        <ImageButton
+          mapName={"Skeld"}
+          mapImage={"https://amongusnotepad.com/img/skeld.png"}
+          handleDisplay={showDisplay}
+        />
       </div>
       <div className="side-element side-element--right side-element--vertical side-element--2"></div>
       <div className="side-element side-element--bottom side-element--horizontal side-element--3"></div>

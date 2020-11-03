@@ -4,8 +4,8 @@ function ImageButton(props) {
   return (
     <button
       className="amongUs-img"
-      onClick={() => {
-        props.display();
+      onClick={(e) => {
+        props.handleDisplay(e);
       }}
     >
       {props.mapName}
