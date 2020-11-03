@@ -3,7 +3,8 @@ import "../sass/_main.scss";
 import Footer from "./Footer";
 import Crew from "./Crew";
 import CreatePlayer from "./CreatePlayer";
-
+import ImageButton from "./ImageButton";
+import ImageOverlay from "./ImageOverlay";
 import Suspects from "./Suspects";
 import Impostor from "./Impostor";
 import Killed from "./Killed";
@@ -327,17 +328,25 @@ function App() {
     });
   }
 
+  function displayImage() {
+    console.log("Clicked");
+  }
+
   return (
     <div>
       <div className="side-element side-element--top side-element--horizontal side-element--1">
-        <h1 className="side-element-heading">
-          Among us notepad 3.0 | The Skeld | Mire HQ | Polus
-        </h1>
+        <h1 className="side-element-heading">Among us notepad 3.0 </h1>
+        <ImageOverlay />
+        <ImageButton
+          mapName={"Mira"}
+          mapImage={"img/mira.png"}
+          display={displayImage}
+        />
+        <ImageButton mapName={"Polus"} mapImage={"img/polus.png"} />
+        <ImageButton mapName={"Skeld"} mapImage={"img/skeld.png"} />
       </div>
       <div className="side-element side-element--right side-element--vertical side-element--2"></div>
-      <div className="side-element side-element--bottom side-element--horizontal side-element--3">
-        {" "}
-      </div>
+      <div className="side-element side-element--bottom side-element--horizontal side-element--3"></div>
       <div className="side-element side-element--left side-element--vertical side-element--4"></div>
 
       <div className="createPlayer">
@@ -385,7 +394,7 @@ function App() {
                 name={suspect.playerName}
                 color={suspect.playerColor}
                 onDelete={deleteSuspect}
-                OnCrew={addCrewSuspect}
+                onCrew={addCrewSuspect}
                 onImpostor={addImpostorSuspect}
                 onKilled={addKilledSuspect}
               />
@@ -402,7 +411,7 @@ function App() {
                 name={impostor.playerName}
                 color={impostor.playerColor}
                 onDelete={deleteImpostor}
-                OnCrew={addCrewImpostor}
+                onCrew={addCrewImpostor}
                 onSuspect={addSuspectImpostor}
                 onKilled={addKilledImpostor}
               />
