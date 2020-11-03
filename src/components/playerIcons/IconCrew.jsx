@@ -26,8 +26,8 @@ const IconCrew = ({
       <path
         fill="none"
         stroke="#f5f5f5"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
         d="M17.954,18.012 c5.189-0.056,9.206-0.178,9.041,6.472c-0.138,5.538-8.433,5.665-9.341,5.465c-0.908-0.2-7.656-0.442-7.654-5.465 C10.002,19.062,14.453,18.05,17.954,18.012z"
       />
     </svg>

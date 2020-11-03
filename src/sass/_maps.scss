@@ -1,0 +1,58 @@
+.amongUs-img {
+  background: none;
+  border: none;
+  color: #ffffff;
+  text-decoration: underline;
+  height: fit-content;
+
+  &:not(:last-child) {
+    padding-right: 2rem;
+  }
+
+  &:focus {
+    position: relative;
+    // change for the <button> element
+    outline: none;
+  }
+
+  &:hover {
+    color: red;
+    cursor: pointer;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+
+  &-inner {
+    position: relative;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.close {
+  position: absolute;
+  top: -20px;
+  right: 0;
+}

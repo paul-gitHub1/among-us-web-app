@@ -13,7 +13,7 @@ function Suspects(props) {
         <button
           className="playerCard__button"
           onClick={() => {
-            props.OnCrew(props.id);
+            props.onCrew(props.id);
           }}
         >
           <PlayerIcons name="Crew" width={35} height={35} />
