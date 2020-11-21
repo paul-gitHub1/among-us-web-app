@@ -48,6 +48,7 @@ function Crew(props) {
           fill="#b5b3b3"
         />
       </button>
+      <h1>Test adding 100</h1>
     </div>
   );
 }
