@@ -2,25 +2,9 @@ import React from "react";
 import PlayerIcons from "./playerIcons/PlayerIcons.jsx";
 import PlayerAvatar from "./playerIcons/PlayerAvatar.jsx";
 
-
-
 function Crew(props) {
   return (
     <div className="playerCard">
-      <button
-        className="playerCard__button playerCard__button--delete"
-        onClick={() => {
-          props.onDelete(props.id);
-        }}
-      >
-        <PlayerIcons
-          name="Delete player"
-          width={10}
-          height={10}
-          fill="#b5b3b3"
-        />
-      </button>
-
       <div className="playerCard__avatar">
         <PlayerAvatar fill={props.color} name={props.name} />
       </div>
@@ -64,9 +48,6 @@ function Crew(props) {
           fill="#b5b3b3"
         />
       </button>
-
-      <h1>Test Adding</h1>
-      <h1>Test adding 100</h1>
     </div>
   );
 }
