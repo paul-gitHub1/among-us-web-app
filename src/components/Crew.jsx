@@ -2,6 +2,8 @@ import React from "react";
 import PlayerIcons from "./playerIcons/PlayerIcons.jsx";
 import PlayerAvatar from "./playerIcons/PlayerAvatar.jsx";
 
+
+
 function Crew(props) {
   return (
     <div className="playerCard">
@@ -50,6 +52,7 @@ function Crew(props) {
       </button>
 
       <h1>Test Adding</h1>
+      <h1>Test adding 100</h1>
     </div>
   );
 }
