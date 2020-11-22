@@ -343,26 +343,36 @@ function App() {
     overlay.classList.remove("open");
   }
 
+  const gameMaps = [
+    {
+      mapName: "Mira",
+      mapImage: "https://amongusnotepad.com/img/mira.png",
+    },
+    {
+      mapName: "Polus",
+      mapImage: "https://amongusnotepad.com/img/polus.png",
+    },
+    {
+      mapName: "Skeld",
+      mapImage: "https://amongusnotepad.com/img/skeld.png",
+    },
+  ];
+
   return (
     <div>
       <div className="side-element side-element--top side-element--horizontal side-element--1">
         <h1 className="side-element-heading">Among us notepad 3.0 </h1>
         <ImageOverlay handleClose={close} />
-        <ImageButton
-          mapName={"Mira"}
-          mapImage={"https://amongusnotepad.com/img/mira.png"}
-          handleDisplay={showDisplay}
-        />
-        <ImageButton
-          mapName={"Polus"}
-          mapImage={"https://amongusnotepad.com/img/polus.png"}
-          handleDisplay={showDisplay}
-        />
-        <ImageButton
-          mapName={"Skeld"}
-          mapImage={"https://amongusnotepad.com/img/skeld.png"}
-          handleDisplay={showDisplay}
-        />
+        {gameMaps.map((map, index) => {
+          return (
+            <ImageButton
+              key={index}
+              mapName={map.mapName}
+              mapImage={map.mapImage}
+              handleDisplay={showDisplay}
+            />
+          );
+        })}
       </div>
       <div className="side-element side-element--right side-element--vertical side-element--2"></div>
       <div className="side-element side-element--bottom side-element--horizontal side-element--3"></div>
