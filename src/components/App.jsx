@@ -8,12 +8,15 @@ import ImageOverlay from "./ImageOverlay";
 import Suspects from "./Suspects";
 import Impostor from "./Impostor";
 import Killed from "./Killed";
+import PlayerColors from "./PlayerColors";
 
 function App() {
   const [crew, setCrew] = useState([]);
   const [suspects, setSuspects] = useState([]);
   const [impostors, setImpostors] = useState([]);
   const [killed, setKilled] = useState([]);
+
+  const [isColorTaken, setIsColorTaken] = useState(PlayerColors);
 
   const deleteNow = function (prevPlayers, id) {
     return prevPlayers.filter((playerItem) => {
@@ -27,6 +30,22 @@ function App() {
     setSuspects([]);
     setImpostors([]);
     setKilled([]);
+
+    // Reset PlayerColors.disabled back to false.
+    PlayerColors.map((element) => {
+      element.disabled = false;
+    });
+
+    console.log(PlayerColors);
+
+    // or
+
+    /*
+ PlayerColors.forEach((element) => {
+      element.disabled = false;
+    });
+
+    */
   }
 
   // Reset all players back to crew
@@ -78,6 +97,18 @@ function App() {
       setCrew((prevPlayers) => {
         return [...prevPlayers, player];
       });
+
+      // looks for the selected color from PlayerColors.jsx object.
+      const colorIndex = PlayerColors.filter(
+        (item, index) => PlayerColors[index].colorHex === player.playerColor
+      );
+
+      // find index of selected color from PlayerColors.jsx object.
+      const findIndexColor = PlayerColors.findIndex(
+        (x) => x.colorHex === colorIndex[0].colorHex
+      );
+      // sets selected color to equal true.
+      setIsColorTaken((PlayerColors[findIndexColor].disabled = true));
     } else if (player.playerColor === "" && player.playerName !== "") {
       alert("Please choose player color!");
     } else if (player.playerColor !== "" && player.playerName === "") {
